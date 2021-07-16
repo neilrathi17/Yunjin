@@ -32,9 +32,13 @@ client.on("message",function(message)
    {
     var resin=calculator.execute(args);
     const Embed = new Discord.MessageEmbed() 
-    Embed.setTitle(resin) 
+    Embed.setTitle("you have " +args + " resin") 
+    Embed.description='your resin will refill in '+ resin[0] + " hours and "+resin[1]+" minutes\n OR in "+ resin[1]*60 +" minutes"
     message.channel.send(Embed)
      }
+     else if(command==='')
+     else 
+     message.reply("not a valid command")
 
 });
 client.login(auth.token)

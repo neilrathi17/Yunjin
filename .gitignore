@@ -6,6 +6,8 @@ bin-release/
 
 # Other files and folders
 .settings/
+.auth.json
+.node_modules
 
 # Executables
 *.swf

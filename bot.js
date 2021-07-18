@@ -2,7 +2,7 @@ var Discord = require('discord.js');
 var auth = require('./auth.json');
 const client = new Discord.Client();
 var calculator =require('./functions/calculator')
-
+var bless=require('./functions/gif')
 client.on('ready',function(message){
     console.log('bot is up');
 
@@ -36,7 +36,14 @@ client.on("message",function(message)
     Embed.description='your resin will refill in '+ resin[0] + " hours and "+resin[1]+" minutes\n OR in "+ resin[1]*60 +" minutes"
     message.channel.send(Embed)
      }
-     else if(command==='')
+     else if(command==='blessme')
+     {
+        var gif=bless.execute()
+        const Embed = new Discord.MessageEmbed() 
+    Embed.setTitle("You have been blessed") 
+    Embed.setImage(gif)
+    message.channel.send(Embed)
+     }
      else 
      message.reply("not a valid command")
 

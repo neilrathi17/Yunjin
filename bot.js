@@ -3,6 +3,9 @@ var auth = require('./auth.json');
 const client = new Discord.Client();
 var calculator =require('./functions/calculator')
 var bless=require('./functions/gif')
+var crit=require('./functions/critcalc')
+
+
 client.on('ready',function(message){
     console.log('bot is up');
 
@@ -43,6 +46,11 @@ client.on("message",function(message)
     Embed.setTitle("You have been blessed") 
     Embed.setImage(gif)
     message.channel.send(Embed)
+     }
+     else if(command==='crit')
+     {
+        crit.execute(args,message)
+         
      }
      else 
      message.reply("not a valid command")

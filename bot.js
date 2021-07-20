@@ -35,6 +35,8 @@ client.on("message",function(message)
    {
     var resin=calculator.execute(args);
     const Embed = new Discord.MessageEmbed() 
+    Embed.setColor('AD9FB4')
+
     Embed.setTitle("you have " +args + " resin") 
     Embed.description='your resin will refill in '+ resin[0] + " hours and "+resin[1]+" minutes\n OR in "+ resin[1]*60 +" minutes"
     message.channel.send(Embed)
@@ -43,6 +45,7 @@ client.on("message",function(message)
      {
         var gif=bless.execute()
         const Embed = new Discord.MessageEmbed() 
+        Embed.setColor('AD9FB4')
     Embed.setTitle("You have been blessed") 
     Embed.setImage(gif)
     message.channel.send(Embed)
@@ -57,3 +60,4 @@ client.on("message",function(message)
 
 });
 client.login(auth.token)
+//AD9FB4
